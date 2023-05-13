@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>orders</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+      @media (min-width: 991px) {
+        .container {
+        height: calc(100% - 71.95px);
+      }
+      }
+      .box {
+        background-color: #1e293b;
+        padding: 20px;
+        border-radius: 4px;
+      }
+      .box a {
+        position: relative;
+        height: 100%;
+        display: block;
+        overflow: hidden;
+      }
+      .box a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .box a::after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background: #ffffff70;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+        opacity: 0;
+      }
+      .box a:hover::after {
+        animation: flashing 0.5s linear ;
+      }
+      .box a span {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        color: #fff;
+      }
+      @keyframes flashing {
+        100% {
+          width: 200%;
+          height: 200%;
+          opacity: 1;
+        }
+      }
+    </style>
+</head>
+<body style="height: 100vh;">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #1e293b;">
+        <div class="container py-2 d-flex justify-content-center align-items-center">
+            <a class="navbar-brand text-capitalize text-white" href="home.html">motors</a>
+        </div>
+    </nav> 
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+      <div class="row mt-5">
+        <div class="col-lg-4 col-md-12">
+          <div class="box mt-4">
+            <a href="Sell_Page/sell_page.html" class="position-relative">
+              <img src="orderSlider/1.jpg" class="w-100 rounded" alt="">
+              <span class="position-absolute fs-2">بيع</span>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12">
+          <div class="box mt-4">
+            <a href="replace_page.html" class="position-relative">
+              <img src="orderSlider/2.jpg" class="w-100 rounded" alt="">
+              <span class="position-absolute fs-2">استبدال</span>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12">
+          <div class="box mt-4">
+            <a href="buy_page.html" class="position-relative">
+              <img src="orderSlider/3.jpg" class="w-100 rounded" alt="">
+              <span class="position-absolute fs-2">شراء</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="jsSlider/js-image-slider.js"></script>
+    <script src="js/all.min.js"></script>
+</body>
+</html>

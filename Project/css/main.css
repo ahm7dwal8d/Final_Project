@@ -1,0 +1,149 @@
+body {
+    background-color: rgb(15,23,42);
+    color: #fff;
+}
+
+/* home page  */
+
+
+.full_w {
+  width: 100% !important;
+}
+
+.full_h {
+  height: 100% !important;
+}
+
+.font_size {
+  font-size: var(--size) !important;
+}
+
+.whiteC_ {
+  color: white !important;
+}
+
+.whiteBG_ {
+  background-color: white !important;
+}
+
+.offWhiteC_ {
+  color: #adadad !important;
+}
+
+.blueC_ {
+  color: #007FE3;
+}
+
+.blueBG_ {
+  background-color: #007FE3;
+}
+
+.car button {
+  background-color: transparent;
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+  color: #007FE3;
+  transition: 0.5s;
+}
+
+.car button:hover {
+  background-color: #007FE3;
+  color: white;
+}
+
+.btn_2 {
+  background-color: transparent;
+  border: none;
+  border-radius: 10px;
+  background-color: #007FE3;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.btn_2:hover {
+  background-color: #fff;
+  color: #007FE3;
+}
+
+/**********************************************************/
+
+.sec_header .bg_ {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+}
+
+.sec_header .bg_ img {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.sec_header .bg_ .black_screen {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.sec_header .bg_ .content_ {
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  bottom: 0;
+  padding: 5rem 0px;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.info-car .col h2 {
+  color: #FEB940;
+  font-size: 50px;
+  font-family: 'Tajawal-ExtraBold' !important;
+}
+
+.info-car .col h3,
+h4 {
+  color: #1D7DCE;
+
+}
+
+.info-car h4 {
+  font-size: 40px;
+  font-family: 'Tajawal-ExtraBold' !important;
+}
+
+
+.info-car .col p {
+  color: #D0D0D0;
+}
+
+.caption {
+  border-radius: 10px;
+  box-shadow: 0px 0px 38px 1px rgba(208, 208, 208, 1);
+  background-color: #ffff;
+
+}
+
+footer {
+  background-color: #F0F0F0;
+}
+
+footer a {
+  font-size: 20px;
+  text-decoration: none;
+  color: #007FE3;
+}
+
+footer a:hover {
+  color: #FFB83D;
+}
+
+form input::placeholder, 
+form label {
+  color: #000;
+}

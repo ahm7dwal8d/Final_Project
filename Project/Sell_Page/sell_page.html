@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,
+100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .box {
+          background-color: #1e293b;
+          padding: 20px;
+          border-radius: 4px;
+        }
+        .box a {
+          position: relative;
+          height: 100%;
+          display: block;
+          overflow: hidden;
+        }
+        .box a::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+        .box a::after {
+          content: '';
+          position: absolute;
+          width: 40px;
+          height: 40px;
+          background: #ffffff70;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 3;
+          opacity: 0;
+        }
+        .box a:hover::after {
+          animation: flashing 0.5s linear ;
+        }
+        .box a span {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 1;
+          color: #fff;
+        }
+        @keyframes flashing {
+          100% {
+            width: 200%;
+            height: 200%;
+            opacity: 1;
+          }
+        }
+      </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #1e293b;">
+        <div class="container py-2 d-flex justify-content-center align-items-center">
+            <a class="navbar-brand text-capitalize text-white" href="home.html">motors</a>
+        </div>
+    </nav>
+    <div class="page-head text-center pt-4 pb-4 fs-1 d-flex justify-content-center">
+        <h2 class=" fs-3 fst-italic text-decoration-none text-danger">بيع سياراتك </h2>
+    </div>
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-lg-6 col-md-12">
+                    <div class="box mt-4">
+                        <a href="sell_form.php" class="position-relative">
+                            <img src="../orderSlider/3.jpg" class="w-100 rounded" alt="">
+                            <span class="position-absolute fs-4">ادخال بيانات السيارة</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="box mt-4">
+                        <a href="sell_cars.php" class="position-relative">
+                            <img src="../orderSlider/1.jpg" class="w-100 rounded" alt="">
+                            <span class="position-absolute fs-4">السيارات المتاحه للبيع</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+      window.onload = function () {
+      let loading = document.createElement('div');
+      loading.className = 'loading-overly d-flex justify-content-center align-items-center'
+      loading.style.backgroundColor = '#fff';
+      loading.style.position = 'fixed';
+      loading.style.inset = 0;
+      document.body.style.overflow = 'hidden'
+      loading.style.transition = '0.5s linear'
+      let icon = document.createElement('div')
+      icon.className = 'loading-icon w-25';
+      icon.innerHTML = `<img src='../img/Spinner-1s-200px.gif' alt='' />`;
+      loading.appendChild(icon)
+      document.body.appendChild(loading)
+      setInterval(function () {
+          loading.remove()
+          document.body.style.overflow = 'auto'
+      }, 2000)
+  }
+      </script>
+</body>
+</html>
