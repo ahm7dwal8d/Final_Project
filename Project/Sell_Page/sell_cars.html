@@ -1,6 +1,6 @@
-<?php
+<!-- <?php
 include "./connection.php"; 
-?>
+?> -->
 <!DOCTYPE html>
 <html>
 
@@ -10,6 +10,7 @@ include "./connection.php";
 	<title>Insert Page page</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/style.css">
 <style>
 	.overly {
@@ -46,15 +47,15 @@ include "./connection.php";
     </div>
 	<div class='container'>
 	<div class='row pb-3'>
-	<?php 
+	<!-- <?php 
 $q="SELECT * from sales ";
 $add = $conn->query($q);
-foreach($add as $r ){?>
+foreach($add as $r ){?> -->
 			<div class="col-lg-4 col-md-6 col-sm-12">
 				<div class="box p-3 rounded mt-4" style='background-color: #1e293b; text-align: right;'>
 					<img class='w-100 mb-2' src="<?= $r["img"]?>" >
 					<h6 class='text-capitalize'><?= $r["name"]?></h6>
-					<h6 class='text-capitalize opacity-50'><?= $r["model"]?></h6>
+					<h6 class='text-capitalize text-white-50'><?= $r["model"]?></h6>
 					<!-- <h6 class='text-capitalize'>phone: <?= $r["phone"]?></h6> -->
 					<div class='text-capitalize d-flex align-items-center justify-content-end'>
 					<i class="fa-solid fa-gauge-high me-2"></i>
@@ -64,38 +65,13 @@ foreach($add as $r ){?>
 						الكيلو متر
 					</div>
 				</div>
-				<div class='text-capitalize my-2'>السعر: <span class='text-danger fs-4'><?= $r["price"]?> جنيه مصري</span></div>
-				<button class='contact btn btn-danger' onclick='contact(<?= $r["phone"]?>)'>طلب التواصل </button>
+				<div class='text-capitalize my-2'>السعر: <span class='text-danger fs'><?= $r["price"]?> جنيه مصري</span></div>
+				<!-- <button class='contact btn btn-danger' onclick='contact(<?= $r["phone"]?>)'>طلب التواصل </button> -->
 				</div>
 			</div>
 			<?php }?>
 		</div>
 	</div>
-	<div class="setting-box">
-      <div class="icon text-black bg-white">
-          <i class="fa-solid fa-gear"></i>
-      </div>
-          <div class="color box p-1 rounded text-center text-capitalize">
-              <h6>change color</h6>
-              <ul class="d-flex justify-content-center ps-0 m-0 pb-2">
-                  <li class="active rounded" data-color="#dc3545"></li>
-                  <li class="rounded" data-color="#F44336"></li>
-                  <li class="rounded" data-color="#e91e63"></li>
-                  <li class="rounded" data-color="#ff9800"></li>
-                  <li class="rounded" data-color="#ff5722"></li>
-              </ul>
-          </div>
-          <div class="bg box text-center pt-1 rounded">
-            <h6>change Theme</h6>
-            <ul class="p-0 m-0 d-flex text-capitalize">
-                <li class=" bg-danger border-danger text-white" data-bg="rgb(15,23,42)">dark</li>
-                <li class="active bg-danger border-danger text-white" data-bg="#fff">light</li>
-            </ul>
-        </div>
-        <div class="box">
-          <button class="btn btn-danger text-capitalize w-100">reset option</button>
-        </div>
-  </div>
 		<script>
 			function contact(num) {
 				let overly = document.createElement('div')
@@ -106,9 +82,6 @@ foreach($add as $r ){?>
 				let box = document.createElement('div')
 				box.className = 'box p-4 rounded bg-white'
 				overly.appendChild(box)
-				let head = document.createElement('h4')
-				head.innerHTML = 'طلب التواصل';
-				box.appendChild(head)
 				let whatsLink = document.createElement('a')
 				whatsLink.href = `https://api.whatsapp.com/send?phone=+20${num}`
 				whatsLink.title = 'Whats App'
@@ -139,7 +112,6 @@ foreach($add as $r ){?>
     loading.style.inset = 0;
     document.body.style.overflow = 'hidden'
     loading.style.transition = '0.5s linear'
-	loading.style.zIndex = '99999999'
     let icon = document.createElement('div')
     icon.className = 'loading-icon w-25';
     icon.innerHTML = `<img src='../img/Spinner-1s-200px.gif' alt='' />`;
@@ -151,6 +123,6 @@ foreach($add as $r ){?>
     }, 2000)
 }
 		</script>
-		<script src="../js/main.js"></script>
 </body>
+
 </html>

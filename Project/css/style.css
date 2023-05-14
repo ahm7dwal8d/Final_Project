@@ -1,0 +1,137 @@
+/* Start Global Rules  */
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+:root {
+    --main-Color: #dc3545;
+    --main-Transtion: all 0.4s linear;
+    --main-bg: #fff
+}
+
+body {
+    background-color: var(--main-bg);
+    transition: var(--main-Transtion)
+}
+
+/* End Global Rules  */
+
+
+/* Home Style  */
+
+.sec_header {
+    height: calc(100vh - 71.95px)!important;
+    overflow: hidden;
+}
+
+.order-link {
+    background-color: #fff;
+    border-radius: 4px;
+    margin: 5px 0;
+    font-weight: bold;
+    border: 1px solid #007FE3
+}
+.order-link:hover {
+    background: transparent;
+    transition: 0.4s inear ;
+    border: 1px solid #fff;
+    color: #fff;
+}
+/* Start Setting Box  */
+.setting-box {
+    position: fixed;
+    top: 60px;
+    left: -250px;
+    width: 250px;
+    height: 60vh;
+    background: #fff;
+    z-index: 9999;
+    transition: var(--main-Transtion);
+}
+.setting-box.active {
+    left: 0;
+}
+.setting-box .icon {
+    position: absolute;
+    top: 60px;
+    right: -36px;
+    background: #fff;
+    padding: 10px;
+    cursor: pointer;
+}
+.setting-box .icon i {
+    
+}
+.setting-box .icon.active i {
+    animation: rounded 1s linear infinite;
+}
+.setting-box .box {
+    background: #ddd;
+    margin: 20px;
+}
+.setting-box ul {
+    list-style: none;
+}
+.setting-box ul li {
+    cursor: pointer;
+    transition: var(--main-Transtion);
+}
+.setting-box .color ul li {
+    width: 30px;
+    height: 25px;
+    margin: 5px;
+    opacity: 0.4;
+}
+.setting-box ul li.active {
+    opacity: 1;
+}
+.setting-box .color ul li:nth-child(5) {
+    background-color: #ff5722;
+}
+.setting-box .color ul li:nth-child(4) {
+    background-color: #ff9800;
+}
+.setting-box .color ul li:nth-child(3) {
+    background-color: #e91e63;
+}
+.setting-box .color ul li:nth-child(2) {
+    background-color: #F44336;
+}
+.setting-box .color ul li:nth-child(1) {
+    background-color: #dc3545;
+}
+.setting-box .bg ul li,
+.setting-box .slider ul li {
+    width: 49%;
+    padding: 5px;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    margin: 0 5px 0;
+    opacity: 0.5;
+    transition: var(--main-Transtion)
+}
+.setting-box .bg ul li.active,
+.setting-box .slider ul li.active {
+    opacity: 1;
+}
+/* End Setting Box  */
+
+
+
+.page-head {
+    color: var(--main-Color)
+}
+
+
+/* Start Animation  */
+@keyframes rounded {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* End Animation  */

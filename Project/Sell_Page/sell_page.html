@@ -13,6 +13,7 @@ rel="stylesheet">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/all.min.css">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/style.css">
     <style>
         .box {
           background-color: #1e293b;
@@ -72,7 +73,7 @@ rel="stylesheet">
         </div>
     </nav>
     <div class="page-head text-center pt-4 pb-4 fs-1 d-flex justify-content-center">
-        <h2 class=" fs-3 fst-italic text-decoration-none text-danger">بيع سياراتك </h2>
+        <h2 class=" fs-3 fst-italic text-decoration-none">بيع سياراتك </h2>
     </div>
         <div class="container">
             <div class="row mt-5">
@@ -95,6 +96,31 @@ rel="stylesheet">
             </div>
         </div>
     </div>
+    <div class="setting-box">
+      <div class="icon text-black bg-white">
+          <i class="fa-solid fa-gear"></i>
+      </div>
+          <div class="color box p-1 rounded text-center text-capitalize">
+              <h6>change color</h6>
+              <ul class="d-flex justify-content-center ps-0 m-0 pb-2">
+                  <li class="active rounded" data-color="#dc3545"></li>
+                  <li class="rounded" data-color="#F44336"></li>
+                  <li class="rounded" data-color="#e91e63"></li>
+                  <li class="rounded" data-color="#ff9800"></li>
+                  <li class="rounded" data-color="#ff5722"></li>
+              </ul>
+          </div>
+          <div class="bg box text-center pt-1 rounded">
+            <h6>change Theme</h6>
+            <ul class="p-0 m-0 d-flex text-capitalize">
+                <li class=" bg-danger border-danger text-white" data-bg="rgb(15,23,42)">dark</li>
+                <li class="active bg-danger border-danger text-white" data-bg="#fff">light</li>
+            </ul>
+        </div>
+        <div class="box">
+          <button class="btn btn-danger text-capitalize w-100">reset option</button>
+        </div>
+  </div>
     <script>
       window.onload = function () {
       let loading = document.createElement('div');
@@ -104,6 +130,7 @@ rel="stylesheet">
       loading.style.inset = 0;
       document.body.style.overflow = 'hidden'
       loading.style.transition = '0.5s linear'
+      loading.style.zIndex = '99999999'
       let icon = document.createElement('div')
       icon.className = 'loading-icon w-25';
       icon.innerHTML = `<img src='../img/Spinner-1s-200px.gif' alt='' />`;
@@ -115,5 +142,6 @@ rel="stylesheet">
       }, 2000)
   }
       </script>
+      <script src="../js/main.js"></script>
 </body>
 </html>

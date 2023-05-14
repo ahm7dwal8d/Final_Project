@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+:root {
+    --main-Color: #dc3545;
+    --main-Transtion: all 0.4s linear;
+}
+
+.order-link {
+    background-color: #fff;
+    border-radius: 4px;
+    margin: 5px 0;
+    font-weight: bold;
+    border: 1px solid #007FE3
+}
+.order-link:hover {
+    background: transparent;
+    transition: 0.4s inear ;
+    border: 1px solid #fff;
+    color: #fff;
+}
+.setting-box {
+    position: fixed;
+    top: 60px;
+    left: -250px;
+    width: 250px;
+    height: 60vh;
+    background: #fff;
+    z-index: 9999;
+    transition: var(--main-Transtion);
+}
+.setting-box.active {
+    left: 0;
+}
+.setting-box .icon {
+    position: absolute;
+    top: 20px;
+    right: -40px;
+    cursor: pointer;
+}
+.setting-box .box {
+    background: #ddd;
+    margin: 20px;
+}
+.setting-box ul {
+    list-style: none;
+}
+.setting-box ul li {
+    width: 30px;
+    height: 25px;
+    margin: 5px;
+    cursor: pointer;
+    opacity: 0.4;
+    transition: var(--main-Transtion);
+}
+.setting-box ul li.active {
+    opacity: 1;
+}
+.setting-box .color ul li:nth-child(5) {
+    background-color: #ff5722;
+}
+.setting-box .color ul li:nth-child(4) {
+    background-color: #ff9800;
+}
+.setting-box .color ul li:nth-child(3) {
+    background-color: #e91e63;
+}
+.setting-box .color ul li:nth-child(2) {
+    background-color: #F44336;
+}
+.setting-box .color ul li:nth-child(1) {
+    background-color: #dc3545;
+}
+
+
+
+
+
+
+.page-head {
+    color: var(--main-Color)
+}

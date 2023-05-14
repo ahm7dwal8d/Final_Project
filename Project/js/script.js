@@ -16,10 +16,10 @@ window.onload = function () {
     setInterval(function () {
         loading.remove()
         document.body.style.overflow = 'auto'
-    }, 2000)
+    }, 100)
 }
 
-console.log('found')
+
 
 // let showForm = document.querySelector('.show-form');
 // let sellForm = document.querySelector('.sell-form');
