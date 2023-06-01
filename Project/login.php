@@ -32,6 +32,7 @@ rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
         form {
             position: absolute;
@@ -53,7 +54,9 @@ rel="stylesheet">
 </head>
 <body style="height: 100vh; background-color:#1e293b; position: relative;">
     <form action="" method="POST">
-        <h2 class="p-2 text-center">Login Form</h2>
+    <div class="page-head text-center pt-4 pb-4 fs-1 d-flex justify-content-center">
+        <h2 class=" fs-3 fst-italic text-decoration-none text-capitalize">login page</h2>
+    </div>
   <div class="container ">
     <div class="form-floating mb-3 text-center">
         <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com">

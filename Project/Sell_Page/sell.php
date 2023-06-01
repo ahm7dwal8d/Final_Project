@@ -23,6 +23,4 @@ move_uploaded_file($imageloc , $newimg);
     else{
         header("Location: sell_form.php");
 }
-
-
 ?>

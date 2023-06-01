@@ -60,6 +60,8 @@ body {
     background: #fff;
     padding: 10px;
     cursor: pointer;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
 }
 .setting-box .icon i {
     
@@ -103,7 +105,8 @@ body {
     background-color: #dc3545;
 }
 .setting-box .bg ul li,
-.setting-box .slider ul li {
+.setting-box .slider ul li,
+.setting-box .items ul li {
     width: 49%;
     padding: 5px;
     border: 1px solid #000;
@@ -127,6 +130,15 @@ body {
     color: var(--main-Color)
 }
 
+.contact {
+    background-color: var(--main-Color);
+    color: #fff;
+    border-color: var(--main-Color);
+    cursor: pointer
+}
+.price {
+    color: var(--main-Color)
+}
 
 /* Start Animation  */
 @keyframes rounded {

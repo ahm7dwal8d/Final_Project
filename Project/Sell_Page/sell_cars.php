@@ -38,14 +38,14 @@ include "./connection.php";
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #1e293b;">
         <div class="container py-2 d-flex justify-content-center align-items-center">
-            <a class="navbar-brand text-capitalize text-white" href="home.html">motors</a>
+            <a class="navbar-brand text-capitalize text-white" href="../home.html">motors</a>
         </div>
     </nav>
     <div class="page-head text-center pt-4 pb-4 fs-1 d-flex justify-content-center">
         <h2 class=" fs-3 fst-italic text-decoration-none">السيارات المتاحه للبيع</h2>
     </div>
 	<div class='container'>
-	<div class='row pb-3'>
+	<div class='row pb-3 car-content'>
 	<?php 
 $q="SELECT * from sales ";
 $add = $conn->query($q);
@@ -61,11 +61,11 @@ foreach($add as $r ){?>
 					<div class="info">
 					<?= $r["distance"]?>
 					<br/>
-						الكيلو متر
+						كيلو متر
 					</div>
 				</div>
-				<div class='text-capitalize my-2'>السعر: <span class='text-danger fs-4'><?= $r["price"]?> جنيه مصري</span></div>
-				<button class='contact btn btn-danger' onclick='contact(<?= $r["phone"]?>)'>طلب التواصل </button>
+				<div class='text-capitalize my-2'>السعر: <span class='price fs-4'><?= $r["price"]?> جنيه مصري</span></div>
+				<button class='contact btn text-white' onclick='contact(<?= $r["phone"]?>)'>طلب التواصل </button>
 				</div>
 			</div>
 			<?php }?>
@@ -85,7 +85,7 @@ foreach($add as $r ){?>
                   <li class="rounded" data-color="#ff5722"></li>
               </ul>
           </div>
-          <div class="bg box text-center pt-1 rounded">
+          <div class="bg box text-center pt-1 pb-2 rounded">
             <h6>change Theme</h6>
             <ul class="p-0 m-0 d-flex text-capitalize">
                 <li class=" bg-danger border-danger text-white" data-bg="rgb(15,23,42)">dark</li>
@@ -104,13 +104,13 @@ foreach($add as $r ){?>
 				overly.id = 'overly'
 				document.body.appendChild(overly)
 				let box = document.createElement('div')
-				box.className = 'box p-4 rounded bg-white'
+				box.className = 'box p-4 rounded bg-white text-center'
 				overly.appendChild(box)
 				let head = document.createElement('h4')
 				head.innerHTML = 'طلب التواصل';
 				box.appendChild(head)
 				let whatsLink = document.createElement('a')
-				whatsLink.href = `https://api.whatsapp.com/send?phone=+20${num}`
+				whatsLink.href = `https://api.whatsapp.com/send?phone=+2${num}`
 				whatsLink.title = 'Whats App'
 				whatsLink.innerHTML = '<i class="fa-brands fa-whatsapp text-danger fs-4"></i>'
 				box.appendChild(whatsLink)

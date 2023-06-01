@@ -17,7 +17,7 @@ rel="stylesheet">
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #1e293b;">
         <div class="container py-2 d-flex justify-content-center align-items-center">
-            <a class="navbar-brand text-capitalize text-white" href="home.html">motors</a>
+            <a class="navbar-brand text-capitalize text-white" href="../home.html">motors</a>
         </div>
     </nav>
     <div class="page-head text-center pt-4 pb-2 fs-1 d-flex justify-content-center">

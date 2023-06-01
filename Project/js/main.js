@@ -1,9 +1,6 @@
 
 let settingBox = document.querySelector('.setting-box');
 let settingIcon = document.querySelector('.setting-box .icon');
-let root = document.querySelector(":root")
-
-console.log(settingBox)
 
 settingIcon.addEventListener('click', function () {
     settingBox.classList.toggle('active');
@@ -56,6 +53,8 @@ bgEl.forEach((el) => {
             el.classList.remove("active");
             this.classList.add("active")
         })
+        document.body.classList.remove('light')
+        document.body.classList.remove('dark')
         document.body.classList.add(el.textContent)
         document.documentElement.style.setProperty("--main-bg", bg)
         localStorage.setItem('bg', bg)
@@ -147,11 +146,13 @@ sliderEl.forEach((el) => {
 
 
 
+
 let resetBtn = document.querySelector('.setting-box .btn');
 
 resetBtn.addEventListener("click", function () {
     localStorage.removeItem('color')
     localStorage.removeItem('bg')
     localStorage.removeItem('slider-item')
+    localStorage.removeItem('itmes-content')
     location.reload()
 })
