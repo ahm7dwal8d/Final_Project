@@ -10,7 +10,7 @@ window.onload = function () {
     let icon = document.createElement('div')
     icon.className = 'loading-icon';
     icon.style.width = 'fit-content'
-    icon.innerHTML = `<img src='./img/Spinner-1s-200px.gif' alt='' />`;
+    icon.innerHTML = `<img src='img/Spinner-1s-200px.gif' alt='' />`;
     loading.appendChild(icon)
     document.body.appendChild(loading)
     setInterval(function () {

@@ -35,6 +35,7 @@ let mainBg = localStorage.getItem('bg');
 
 if (mainBg !== null) {
     document.documentElement.style.setProperty("--main-bg", mainBg)
+    document.body.backgroundColor = mainBg
     document.querySelectorAll(".setting-box .bg li").forEach((element) => { 
         element.classList.remove("active")
         if (element.dataset.bg === mainBg) {
@@ -56,6 +57,7 @@ bgEl.forEach((el) => {
         document.body.classList.remove('light')
         document.body.classList.remove('dark')
         document.body.classList.add(el.textContent)
+        document.body.style.backgroundColor = bg
         document.documentElement.style.setProperty("--main-bg", bg)
         localStorage.setItem('bg', bg)
         boxTheme(el.textContent)
@@ -86,13 +88,14 @@ window.onload = function () {
             el.style.color = '#000'
             el.style.transition = 'all 0.4s linear'
         })
-    } else {
+    } else if(document.body.classList.contains('dark')) {
         box.forEach(el => {
             el.style.backgroundColor = '#1e293b'
             el.style.color = '#fff'
             el.style.transition = 'all 0.4s linear'
         })
     }
+    document.body.style.backgroundColor = mainBg
 }
 
 let sliderEl = document.querySelectorAll('.setting-box .slider li')
@@ -139,10 +142,116 @@ sliderEl.forEach((el) => {
                 slide.classList.remove('carousel-item');
                 localStorage.setItem('slider-item', false);
             })
+            const mainDiv = document.querySelector('.carousel-inner')
+            const activeSlide = document.querySelectorAll('.slide-items');
+            console.log(activeSlide)
+            activeSlide.forEach((slide) => {
+                if (slide.classList.contains) {
+                    mainDiv.prepend(slide)
+                }
+            })
         }
     })
 })
 
+let carContent = document.querySelector('.car-content')
+let carBox = document.querySelectorAll('.car-content .col-lg-4')
+let gridLi = document.querySelectorAll('.setting-box .grid li')
+
+let mainGrid = localStorage.getItem('grid-item');
+
+if (mainGrid !== null) {
+    gridLi.forEach((el) => {
+        el.classList.remove("active")
+        if (el.dataset.grid === mainGrid) { 
+            el.classList.add('active')
+        }
+    })
+    if (mainGrid === 'grid') {
+        carContent.classList.contains('row') ? console.log('found') : carContent.classList.replace("block", 'row')
+        carBox.forEach((el) => {
+            el.classList.value = 'col-lg-4 col-md-6 col-sm-4'
+            el.style.transition = 'all 0.4s linear'
+            el.style.width = ''
+        })
+        document.querySelectorAll('.car-content img').forEach((el) => {
+            el.classList.add('w-100')
+        })
+        const box = document.querySelectorAll('.car-content .box')
+        box.forEach((el) => {
+            el.classList.add('d-block')
+            el.classList.remove('d-flex')
+        })
+        carContent.style.transition = 'all 0.4s linear'
+    } else if (mainGrid === 'block') {
+        if (carContent !== null) {
+            carContent.classList.replace("row", 'block')
+            carContent.style.width = '100%'
+        }
+        carBox.forEach((el) => {
+            el.classList.value = 'block-elemets'
+            el.style.width = '60%'
+            console.log(el)
+        })
+        const box = document.querySelectorAll('.car-content .box')
+        box.forEach((el) => {
+            el.classList.add('d-flex')
+            el.classList.remove('d-block')
+        })
+        document.querySelectorAll('.car-content img').forEach((el) => {
+            el.classList.remove('w-100')
+            el.style.width = '60%'
+        })
+    }
+}
+
+
+gridLi.forEach((el) => {
+    el.addEventListener('click', function () {
+        let grid = el.getAttribute('data-grid')
+        gridLi.forEach(el => { 
+            el.classList.remove('active')
+            this.classList.add('active')
+        })
+        if (el.dataset.grid === 'grid') { 
+            carContent.classList.contains('row') ? console.log('found') : carContent.classList.replace("block", 'row')
+            carBox.forEach((el) => {
+                el.classList.value = 'col-lg-4 col-md-6 col-sm-4'
+                el.style.transition = 'all 0.4s linear'
+                el.style.width = ''
+            })
+            document.querySelectorAll('.car-content img').forEach((el) => {
+                el.classList.add('w-100')
+            })
+            carContent.style.transition = 'all 0.4s linear'
+            const box = document.querySelectorAll('.car-content .box')
+            box.forEach((el) => {
+                el.classList.add('d-block')
+                el.classList.remove('d-flex')
+            })
+            localStorage.setItem('grid-item', 'grid')
+        } else if (el.dataset.grid === 'block') {
+            carContent.classList.replace("row", 'block')
+            carBox.forEach((el) => {
+                el.classList.value = 'block-elemets'
+                el.style.width = '100%'
+                console.log(el)
+            })
+            const box = document.querySelectorAll('.car-content .box')
+            box.forEach((el) => {
+                el.classList.add('d-flex')
+                el.classList.remove('d-block')
+            })
+            document.querySelectorAll('.car-content img').forEach((el) => {
+                el.classList.remove('w-100')
+                el.style.width = '60%'
+            })
+            carContent.style.width = '100%'
+            console.log(carBox)
+            localStorage.setItem('grid-item', 'block')
+        }
+    })
+})
 
 
 
@@ -154,5 +263,6 @@ resetBtn.addEventListener("click", function () {
     localStorage.removeItem('bg')
     localStorage.removeItem('slider-item')
     localStorage.removeItem('itmes-content')
+    localStorage.removeItem('grid-item')
     location.reload()
 })

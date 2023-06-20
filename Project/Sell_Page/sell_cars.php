@@ -33,6 +33,7 @@ include "./connection.php";
     	font-weight: bold;
 	}
 </style>
+<title>Sell Cars</title>
 </head>
 
 <body>
@@ -51,21 +52,24 @@ $q="SELECT * from sales ";
 $add = $conn->query($q);
 foreach($add as $r ){?>
 			<div class="col-lg-4 col-md-6 col-sm-12">
-				<div class="box p-3 rounded mt-4" style='background-color: #1e293b; text-align: right;'>
+				<div class="box p-3 rounded mt-4" style='background-color: #EEE; text-align: right;'>
 					<img class='w-100 mb-2' src="<?= $r["img"]?>" >
-					<h6 class='text-capitalize'><?= $r["name"]?></h6>
-					<h6 class='text-capitalize opacity-50'><?= $r["model"]?></h6>
-					<!-- <h6 class='text-capitalize'>phone: <?= $r["phone"]?></h6> -->
-					<div class='text-capitalize d-flex align-items-center justify-content-end'>
-					<i class="fa-solid fa-gauge-high me-2"></i>
-					<div class="info">
-					<?= $r["distance"]?>
-					<br/>
-						كيلو متر
+					<!-- <img class='w-100 mb-2' src="../img/1.png" > -->
+					<div class="box-info">
+						<h6 class='text-capitalize'><?= $r["name"]?></h6>
+						<h6 class='text-capitalize opacity-50'><?= $r["model"]?></h6>
+						<!-- <h6 class='text-capitalize'>phone: <?= $r["phone"]?></h6> -->
+						<div class='text-capitalize d-flex align-items-center justify-content-end'>
+						<i class="fa-solid fa-gauge-high me-2"></i>
+						<div class="info">
+						<?= $r["distance"]?>
+						<br/>
+							كيلو متر
+						</div>
 					</div>
-				</div>
-				<div class='text-capitalize my-2'>السعر: <span class='price fs-4'><?= $r["price"]?> جنيه مصري</span></div>
-				<button class='contact btn text-white' onclick='contact(<?= $r["phone"]?>)'>طلب التواصل </button>
+					<div class='text-capitalize my-2'>السعر: <span class='price fs-4'><?= $r["price"]?> جنيه مصري</span></div>
+					<button class='contact btn text-white' onclick='contact(<?= $r["phone"]?>)'>طلب التواصل </button>
+					</div>
 				</div>
 			</div>
 			<?php }?>
@@ -90,6 +94,13 @@ foreach($add as $r ){?>
             <ul class="p-0 m-0 d-flex text-capitalize">
                 <li class=" bg-danger border-danger text-white" data-bg="rgb(15,23,42)">dark</li>
                 <li class="active bg-danger border-danger text-white" data-bg="#fff">light</li>
+            </ul>
+        </div>
+          <div class="grid box text-center pt-1 pb-2 rounded">
+			<h6 class="text-capitalize">change design</h6>
+            <ul class="p-0 m-0 d-flex text-capitalize">
+                <li class=" active bg-danger border-danger text-white" data-grid="grid">grid</li>
+                <li class=" bg-danger border-danger text-white" data-grid="block">block</li>
             </ul>
         </div>
         <div class="box">
